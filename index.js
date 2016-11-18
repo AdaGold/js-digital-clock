@@ -8,13 +8,20 @@ $(document).ready(function (){
     intervalId = setInterval(showTime, 1000);
   }
 
+  var showDate = function(){
+    var today = new Date(Date.now());
+    $('#date').html('<h3>' + today.toDateString() + '</h3>')
+
+    }
+
   var showTime = function(){
 
     var now = new Date(Date.now());
-     $('#clock').html('<h1>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h1>')
+     $('#clock').html('<h3>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h3>')
    }
 
    var stopClock = function() {
+     console.log("hi")
     clearInterval(intervalId);
   }
 
@@ -32,6 +39,7 @@ $(document).ready(function (){
 
 
   $('#start').toggle();
+  showDate();
   startClock();
 
 });
