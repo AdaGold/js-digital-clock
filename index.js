@@ -2,15 +2,36 @@
 
 $(document).ready(function (){
 
-   var now = new Date(Date.now());
+  var intervalId = null
+
+  var startClock = function(){
+    intervalId = setInterval(showTime, 1000);
+  }
+
   var showTime = function(){
-     setInterval(
 
-
-     $('#clock').append('<h1>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h1>'),
-     1000)
+    var now = new Date(Date.now());
+     $('#clock').html('<h1>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h1>')
    }
 
-   showTime();
+   var stopClock = function() {
+    clearInterval(intervalId);
+  }
+
+  $('#stop').click(function(){
+    stopClock();
+    $('#stop').toggle();
+    $('#start').toggle();
+  })
+
+  $('#start').click(function(){
+    startClock();
+    $('#stop').toggle();
+    $('#start').toggle();
+  })
+
+
+  $('#start').toggle();
+  startClock();
 
 });
