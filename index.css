@@ -1,16 +1,43 @@
 body {
-    background-color: #80d4ea;
+    background-color: white;
+}
+
+h3{
+  margin: 1%;
+}
+
+#clock, #date {
+    font-family: courier, monospace;
+    text-align: center;
+    color: black;
+    font-size: 85px;
 }
 
 #clock {
-    height: 100px;
-    width: 800px;
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    padding-top: 70px;
-    font-family: courier, monospace;
-    text-align: center;
-    color: white;
-    font-size: 100px;
+  font-family: 'Orbitron', sans-serif;
+  color: #39FF14;
+  text-shadow: 2px 2px 2px rgba(179,255,102, 0.8);
+  width: 40%;
+  background-color: #303030 ;
+  padding: 1%;
+  border-radius: 10%;
+  border: solid 20px black;
+  margin-left: 25%;
+  
+}
+
+#stop, #start {
+  background: red;
+  border-radius: 100%;
+  width: 4%;
+  padding: 2%;
+  text-align: center;
+  font-family: courier, monospace;
+  color: white;
+  margin: 1%;
+  border: solid 4px white;
+}
+
+#start {
+  background: green;
 }
