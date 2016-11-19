@@ -17,7 +17,8 @@ $(document).ready(function (){
   var showTime = function(){
 
     var now = new Date(Date.now());
-     $('#clock').html('<h3>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h3>')
+     $('#clock').html(now.toTimeString().slice(0,8))
+    //  ('<h3>' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + '</h3>')
    }
 
    var stopClock = function() {

@@ -1,5 +1,5 @@
 body {
-    background-color: #80d4ea;
+    background-color: white;
 }
 
 h3{
@@ -9,8 +9,21 @@ h3{
 #clock, #date {
     font-family: courier, monospace;
     text-align: center;
-    color: white;
+    color: black;
     font-size: 85px;
+}
+
+#clock {
+  font-family: 'Orbitron', sans-serif;
+  color: #39FF14;
+  text-shadow: 2px 2px 2px rgba(179,255,102, 0.8);
+  width: 40%;
+  background-color: #303030 ;
+  padding: 1%;
+  border-radius: 10%;
+  border: solid 20px black;
+  margin-left: 25%;
+  
 }
 
 #stop, #start {
