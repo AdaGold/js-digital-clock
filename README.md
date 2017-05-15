@@ -2,6 +2,8 @@
 
 ### Create a digital clock in your browser!
 
+This is an individual [Stage 1](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md) project.
+
 ### Getting Started
 - Create a function which will do all of the work to calculate and show the time.
 
