@@ -12,7 +12,8 @@
       "requireReturn": true,
       "requireReturnType": true,
       "requireParamDescription": true,
-      "requireReturnDescription": true
+      "requireReturnDescription": true,
+      "no-console": true
     }],
     "require-jsdoc": ["error", {
         "require": {
