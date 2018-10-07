@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Javascript Clock!</title>
+<style>
+#myhead{
+  /* color: #8B0000; */
+  font-family: 'Droid serif', serif;
+  font-size: 45px;
+   font-weight: bold;
+   line-height: 48px;
+   text-align: center;
+   margin: 0;
+   text-decoration-line: underline;
+   text-decoration-style: solid;
+  }
+  .center{
+    background-color: #000;
+    position: absolute;
+    left: calc(50% - 10px);
+    top:  calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /*z-index: 20;*/
+}
+
+body{
+    background-color: #008B8B;
+    padding: 0;
+    margin: 0;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 12%;
+    background-color: #FDF5E6;
+    margin: 100px auto 0px auto;
+    position: relative;
+    border:17px solid #F0E68C;
+  background-image: url('/home/keshu/Documents/SCEassignment2/clock.png');
+  height: 300px;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+
+}
+
+.hourHand{
+    width: 10px;
+    height: 75px;
+    background-color: #000080;
+    transform-origin: bottom center;
+    border-radius: 2px;
+    position: absolute;
+    top: 75px;
+    left: 145px;
+    z-index: 10;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transform: rotate(360deg);
+
+}
+.minuteHand{
+    width: 5px;
+    height: 120px;
+    background-color: #2F4F4F;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    position: absolute;
+    top: 30px;
+    left: 147px;
+    z-index: 9;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transform: rotate(90deg);
+
+}
+.secondHand{
+    width: 2px;
+    height: 120px;
+    background-color:#E9967A;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    position: absolute;
+    top: 30px;
+    left: 149px;
+    transition: all 0.06s;
+    z-index: 8;
+      transform: rotate(360deg);
+
+}
+</style>
+</head>
+<body>
+  <br><br><br>
+  <h1 class="knockout"> </h1>
+  <div class="text-center">
+  <h2 id="myhead"><center>Javascript Clock!</centre></h2>
+</div>
+    <div class="clock">
+        <div class="hourHand"></div>
+        <div class="minuteHand"></div>
+        <div class="secondHand"></div>
+        <div class="center"></div>
+    </div>
+</body>
+<script>
+const secondHand = document.querySelector('.secondHand');
+const minsHand = document.querySelector('.minuteHand');
+const hourHand = document.querySelector('.hourHand');
+
+function setDate() {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360);
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6);
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+  const hour = now.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30);
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+setInterval(setDate, 1000);
+setDate();
+</script>
+
+</html>
+
+
